@@ -1,0 +1,43 @@
+@font-face {
+    font-family: 'dvd';
+    src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/86186/dvd.eot?bj2v8n');
+    src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/86186/dvd.eot?bj2v8n#iefix') format('embedded-opentype'), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/86186/dvd.ttf?bj2v8n') format('truetype'), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/86186/dvd.woff?bj2v8n') format('woff'), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/86186/dvd.svg?bj2v8n#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background: #45484d;
+    background: -moz-radial-gradient(center, ellipse cover, #45484d 0%, #000000 100%);
+    background: -webkit-radial-gradient(center, ellipse cover, #45484d 0%, #000000 100%);
+    background: radial-gradient(ellipse at center, #45484d 0%, #000000 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#45484d', endColorstr='#000000', GradientType=1);
+}
+
+#dvd {
+    position: absolute;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    width: 80px;
+    height: 34px;
+    color: #fff;
+}
+
+#dvd:before {
+    font-family: 'dvd' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\e900";
+    font-size: 175px;
+}
