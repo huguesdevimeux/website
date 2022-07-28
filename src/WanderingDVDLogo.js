@@ -17,7 +17,6 @@ function startWandering() {
         yMin = -boxTop,
         xMax = win.innerWidth - boxLeft - boxWidth,
         yMax = win.innerHeight - boxTop - boxHeight,
-        request = null,
         direction = 'se'
 
     const DVD_SCALE_FACTOR = 0.2;
@@ -26,7 +25,7 @@ function startWandering() {
     function animationLoop() {
         updateConstraints()
         move();
-        request = requestAnimationFrame(animationLoop);
+        requestAnimationFrame(animationLoop);
     }
 
 
@@ -46,6 +45,7 @@ function startWandering() {
     }
 
     function setDirection() {
+        // eslint-disable-next-line default-case
         switch (direction) {
             case 'ne':
                 translateX += SPEED;
@@ -69,33 +69,33 @@ function startWandering() {
 
     function setLimits() {
         if (translateY <= yMin) {
-            if (direction == 'nw') {
+            if (direction === 'nw') {
                 direction = 'sw';
-            } else if (direction == 'ne') {
+            } else if (direction === 'ne') {
                 direction = 'se';
             }
             switchColor();
         }
         if (translateY >= yMax) {
-            if (direction == 'se') {
+            if (direction === 'se') {
                 direction = 'ne';
-            } else if (direction == 'sw') {
+            } else if (direction === 'sw') {
                 direction = 'nw';
             }
             switchColor();
         }
         if (translateX <= xMin) {
-            if (direction == 'nw') {
+            if (direction === 'nw') {
                 direction = 'ne';
-            } else if (direction == 'sw') {
+            } else if (direction === 'sw') {
                 direction = 'se';
             }
             switchColor();
         }
         if (translateX >= xMax) {
-            if (direction == 'ne') {
+            if (direction === 'ne') {
                 direction = 'nw';
-            } else if (direction == 'se') {
+            } else if (direction === 'se') {
                 direction = 'sw';
             }
             switchColor();
@@ -103,7 +103,7 @@ function startWandering() {
     }
 
     function switchColor() {
-        var color = Math.floor((Math.random() * 25) + 1);
+        let color = Math.floor((Math.random() * 25) + 1);
 
         while (color === currentColor) {
             color = Math.floor((Math.random() * 25) + 1)
@@ -129,11 +129,11 @@ function startWandering() {
             };
 
         return vendors[match[0]];
-    };
+    }
 
     function setStyle(element, properties) {
-        var prefix = getVendor(),
-            property, css = '';
+        const prefix = getVendor();
+        let property, css = '';
         for (property in properties) {
             css += property + ': ' + properties[property] + ';';
             css += prefix + property + ': ' + properties[property] + ';';

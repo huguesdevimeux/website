@@ -14,14 +14,14 @@ function ProfilePicture() {
 }
 
 
-function MainBox({text}) {
+function MainBox() {
     const boxVariant = {
         visible: {opacity: 1, scale: 1},
         hidden: {opacity: 0, scale: 0},
     }
     const control = useAnimation()
-    const [ref, inView] = useInView({threshold: 0.5})
-    const [scrolled, setScrolled] = useState(0)
+    const [ref, ] = useInView({threshold: 0.5})
+    const [scrolled,] = useState(0)
 
     useEffect(() => {
         console.log(scrolled)
